@@ -1,0 +1,48 @@
+.inicio__titulo {
+    color: #1976d2;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.inicio__menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.inicio-tarjeta {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.inicio-tarjeta__titulo {
+    margin-bottom: 1rem;
+}
+
+.inicio-tarjeta__enlace {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.inicio-tarjeta__descripcion {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem 0 0;
+}
+
+.inicio-tajeta__imagen {
+    width: 150px;
+    height: 100%;
+    min-width: 150px;
+    max-width: 150px;
+    background-color: #1976d2;
+    object-fit: cover;
+}

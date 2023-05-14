@@ -1,0 +1,39 @@
+<div class="paginacion">
+    <p class="paginacion__texto">Página {{pagina}} de {{infoPersonajes.pages}}</p>
+    <button class="paginacion__boton" (click)="paginaPrimera()" [disabled]="pagina === 1">Primera Página</button>
+    <button class="paginacion__boton" (click)="paginaAnterior()" [disabled]="pagina === 1">Anterior</button>
+    <select class="paginacion__selector" (change)="cambiarPagina()" [(ngModel)]="pagina">
+        <option *ngFor="let a of paginas; let i = index" [value]="a">{{a}}
+        </option>
+    </select>
+    <button class="paginacion__boton" (click)="paginaSiguiente()"
+        [disabled]="pagina === infoPersonajes.count">Siguiente</button>
+    <button class="paginacion__boton" (click)="paginaUltima()" [disabled]="pagina === infoPersonajes.pages">Última
+        Página</button>
+</div>
+
+<div class="spinner" *ngIf="cargando"></div>
+
+<div class="contenedor-tarjetas" *ngIf="!cargando">
+    <div class="tarjeta-personaje" *ngFor="let personaje of personajes">
+        <h3 class="tarjeta-personaje__titulo">{{personaje.name}}</h3>
+
+        <img class="tarjeta-personaje__imagen" src="{{personaje.image}}" alt="{{personaje.name}}">
+
+        <div class="tarjeta-personaje__informacion">
+            <ul class="tarjeta-personaje__lista">
+                <li class="tarjeta-personaje__item">
+                    <span class="tarjeta-personaje__item-titulo">Especie</span>
+                    <span class="tarjeta-personaje__item-pildora"
+                        [ngClass]="'tarjeta-personaje__item-pildora--' + personaje.species">{{personaje.species}}</span>
+                </li>
+
+                <li class="tarjeta-personaje__item">
+                    <span class="tarjeta-personaje__item-titulo">Género</span>
+                    <span class="tarjeta-personaje__item-pildora"
+                        [ngClass]="'tarjeta-personaje__item-pildora--' + personaje.gender">{{personaje.gender}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
